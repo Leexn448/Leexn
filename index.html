@@ -16,5 +16,23 @@ var _hmt = _hmt || [];
   var s = document.getElementsByTagName("script")[0]; 
   s.parentNode.insertBefore(hm, s);
 })();
+/* 在线人数 */
+function magic_number(value) { 
+    var num = $("#number"); 
+    num.animate({count: value}, { 
+        duration: 500, 
+        step: function() { 
+            num.text(String(parseInt(this.count))); 
+        } 
+    }); 
+};
+function update() { 
+    $.getJSON("number.php?jsonp=?", function(data) { 
+        magic_number(data.n); 
+    }); 
+}; 
+ 
+setInterval(update, 5000); //5秒钟执行一次 
+update(); 
 </script>
 </html>
