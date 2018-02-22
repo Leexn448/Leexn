@@ -296,4 +296,4 @@ class WebSocket {
         file_put_contents(self::LOG_PATH . 'websocket_error.log', implode(' | ', $info) . "\r\n", FILE_APPEND);
     }
 }
-$ws = new WebSocket("127.0.0.1", "8080");
+$ws = new WebSocket(localhost", "8080");
