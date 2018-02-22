@@ -1,11 +1,18 @@
-<html>
-
-<frameset rows="25%,25%,25%,25%">
-  <frame scr="head.html">
-  <frame src="article_1.html">
-  <frame src="article_2.html">
-  <frame src="article_3.html">
-
-</frameset>
-
+< html >
+<body>
+<div>
+  <frame scr="article.html?id=1" hidden>
+  <frame src="article.html?id=2" hidden>
+</div>
+</body>
+<script type="text/javascrip">
+function     GetQueryString(name)     
+{     
+     var     reg     =   new   RegExp("(^|&)"+     name     +"=([^&]*)(&|$)");     
+     var     r     =     window.location.search.substr(1).match(reg);     
+     if     (r!=null)   return     unescape(r[2]);   return   null;     
+}
+var id=GetQueryString("id")
+document.getElementById(id).removeAttribute("hidden");
+</script> 
 </html>
