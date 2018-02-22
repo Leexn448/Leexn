@@ -6,7 +6,8 @@
 </head>
 <body>
 <h1>Welcome</h1>
-<div class="count">当前在线：<span id="number"></span></div>
+<div class =“realtimeuserscounter realtimeuserscounter  -  styled”> </ div>
+<script src =“https://realtimeusers.bycontrast.co/realtimeusers.js”> </ script>
 </body>
 <script>
 var _hmt = _hmt || [];
@@ -17,22 +18,6 @@ var _hmt = _hmt || [];
   s.parentNode.insertBefore(hm, s);
 })();
 /* 在线人数 */
-function magic_number(value) { 
-    var num = $("#number"); 
-    num.animate({count: value}, { 
-        duration: 500, 
-        step: function() { 
-            num.text(String(parseInt(this.count))); 
-        } 
-    }); 
-};
-function update() { 
-    $.getJSON("number.php?jsonp=?", function(data) { 
-        magic_number(data.n); 
-    }); 
-}; 
- 
-setInterval（"update()"，5000）; // 5秒钟执行一次)
-update（）;
+
 </ script >
 </html>
