@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>Article</title>
+<body>
+<div id="" hidden>
+<h1>错误</h1>
+</div>
+<div id="null" hidden>
+<h1>错误</h1>
+</div>
+<div id="1" hidden>
+<h1>标题1</h1>
+</div>
+<div id="2" hidden>
+<h1>标题2</h1>
+</div>
+</body>
+<script type="text/javascript">
+function     GetQueryString(name)     
+{     
+     var     reg     =   new   RegExp("(^|&)"+     name     +"=([^&]*)(&|$)");     
+     var     r     =     window.location.search.substr(1).match(reg);     
+     if     (r!=null)   return     unescape(r[2]);   return   null;     
+}
+var id=GetQueryString("id")
+document.getElementById(id).removeAttribute("hidden");
+</script>
+</html>
